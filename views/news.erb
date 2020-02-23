@@ -25,51 +25,40 @@
     <a class="navbar-brand" href="/">Home</a>
     </nav>
    
-    <div>
-    <div class="container mt-5">
-        <h1> Weather in <%= @location %> </h1>
-        <p> powered by Dark Sky API </p>
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4"> Weather in <%= @location %> </h1>
+        <h5> Powered by Dark Sky API </h5>
+        <p class="lead"> In <%= @location %>, it is currently <%= @forecast["currently"]["temperature"].round %>°F and <%= @forecast["currently"]["summary"].downcase %>. The high today will be <%= @forecast["daily"]["data"][0]["temperatureHigh"].round %>°F and the low will be <%= @forecast["daily"]["data"][0]["temperatureLow"].round %>°F.</p>
+        <h2> <%= @location %> Extended Forecast </h2> 
+        <p>
+        <ul class="list-group list-group-flush">
+            <% for @weekday in @forecast["daily"]["data"] %>
+            <li class="list-group-item"> <%= Time.at(@weekday["time"]).strftime("%a") %> - A temperature range of <%= @weekday["temperatureLow"].round%>°F to <%= @weekday["temperatureHigh"].round%>°F and <%= @weekday["summary"].downcase%> </li>
+            <% end %>
+        </ul>
+        </p>
+        </div>
     </div>
 
-    <div class="container mt-5">
-     <p>
-        In <%= @location %>, it is currently <%= @forecast["currently"]["temperature"].round %>°F and <%= @forecast["currently"]["summary"].downcase %>.
-        The high today will be <%= @forecast["daily"]["data"][0]["temperatureHigh"].round %>°F and the low will be <%= @forecast["daily"]["data"][0]["temperatureLow"].round %>°F.
-    </p>
-    </div>
-
-    <div class="container mt-5">
-    <h2> <%= @location %> Extended Forecast </h2> 
-    <p>
-    <ul class="list-group list-group-flush">
-        <% for @weekday in @forecast["daily"]["data"] %>
-        <li class="list-group-item"> <%= Time.at(@weekday["time"]).strftime("%a") %> - A temperature range of <%= @weekday["temperatureLow"].round%>°F to <%= @weekday["temperatureHigh"].round%>°F and <%= @weekday["summary"].downcase%> </li>
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">News Headlines</h1>
+        <h5> Powered by News API </h5>
+        <div class="row">
+        <% for news_articles in @news["articles"] %>
+        <div class="col-sm-6">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><%= news_articles["title"] %></h5>
+                <a href="<%= news_articles["url"] %>" class="btn btn-primary"> Read at <%= news_articles["source"]["name"] %> </a>
+            </div>
+            </div>
+        </div>
         <% end %>
-    </ul>
-    </p>
+        </div>
+        </div>
     </div>
-    </div>
-
-    <div class="container mt-5">
-      <h1>News Headlines</h1>
-      <p> powered by News API </p>
-
-
-<div class="row">
-<% for news_articles in @news["articles"] %>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= news_articles["title"] %></h5>
-        <a href="<%= news_articles["url"] %>" class="btn btn-primary"> Read at <%= news_articles["source"]["name"] %> </a>
-      </div>
-    </div>
-  </div>
-  <% end %>
-</div>
-
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
