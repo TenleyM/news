@@ -1,12 +1,20 @@
-h1 {
+h1{
     font-size: 20 px;
+    font-family: 'Kosugi';
 }
-h2 {
+h2{
     font-size: 15 px;
+    font-family: 'Kosugi';
 }
-h5 {
+h5{
     font-size: 5 px;
+    font-family: 'Kosugi';
 }
-p {
+p{
     font-size: 10 px;
+    font-family: 'Kosugi';
+}
+li{
+    font-size: 10 px
+    font-family: 'Kosugi';
 }
