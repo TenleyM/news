@@ -18,15 +18,18 @@
     <!-- Your own CSS -->
     <link rel="stylesheet" href="/styles.css">
 
-    <title>News</title>
+    <title>Home Page</title>
   </head>
   <body>
-
     <div class="container mt-5">
-      <h1>Geocoding</h1>
+      <h1>Enter Location of Your Choice</h1>
       <form action="/news">
-      <input type="text" name="q">
-      <button type="submit">Go there</submit>
+      <div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" name="location_field" placeholder="Where To?" aria-label="where_to" aria-describedby="button-addon2">
+        <div class="input-group-append">
+        <button class="btn btn-info btn-outline-secondary" type="button" id="button-addon2">Get News and Weather</button>
+        </div>
       </form>
     </div>
 
