@@ -7,7 +7,7 @@
 
     <!-- Google Fonts -->
     <!-- Swap out "Roboto" for the font(s) you want to use -->
-    <link href="https://fonts.googleapis.com/css?family=Kosugi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
@@ -27,8 +27,7 @@
    
     <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1 class="display-4"> Weather in <%= @location %> </h1>
-        <h5> Powered by Dark Sky API </h5>
+        <h1> Weather in <%= @location %> </h1>
         <p class="lead"> In <%= @location %>, it is currently <%= @forecast["currently"]["temperature"].round %>°F and <%= @forecast["currently"]["summary"].downcase %>. The high today will be <%= @forecast["daily"]["data"][0]["temperatureHigh"].round %>°F and the low will be <%= @forecast["daily"]["data"][0]["temperatureLow"].round %>°F.</p>
         <h2> <%= @location %> Extended Forecast </h2> 
         <p>
@@ -38,13 +37,13 @@
             <% end %>
         </ul>
         </p>
+        <h8> Powered by Dark Sky API </h8>
         </div>
     </div>
 
     <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1 class="display-4">News Headlines</h1>
-        <h5> Powered by News API </h5>
+        <h1>News Headlines</h1>
         <div class="row">
         <% for news_articles in @news["articles"] %>
         <div class="col-sm-6">
@@ -57,6 +56,7 @@
         </div>
         <% end %>
         </div>
+        <h8> Powered by News API </h8>
         </div>
     </div>
 

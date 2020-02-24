@@ -1,20 +1,22 @@
 h1{
-    font-size: 20 px;
-    font-family: 'Kosugi';
+    color: blueviolet;
+    font-weight: bolder;
+    font-family: 'Varela Round';
 }
+
 h2{
-    font-size: 15 px;
-    font-family: 'Kosugi';
+    font-weight: bold;
+    font-family: 'Varela Round';
 }
-h5{
-    font-size: 5 px;
-    font-family: 'Kosugi';
+h8{
+    font-weight: lighter
+    font-family: 'Varela Round';
 }
 p{
-    font-size: 10 px;
-    font-family: 'Kosugi';
+    font-weight: normal;
+    font-family: 'Varela Round';
 }
 li{
-    font-size: 10 px
-    font-family: 'Kosugi';
+    font-weight: normal;
+    font-family: 'Varela Round';
 }
